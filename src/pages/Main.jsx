@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
-const tg = window.Telegram.WebApp;
 
+//Components
+import Product from '../components/UI/Product/Product';
+
+const tg = window.Telegram.WebApp;
 
 const Main = () => {
 
@@ -8,14 +11,9 @@ const Main = () => {
         tg.ready()
     }, []);
 
-    const closeApp = () => {
-        tg.close();
-    }
-
     return (
         <>
-            work
-            <button onClick={closeApp}>Закрыть</button>
+            <Product/>
         </>
     )
 };

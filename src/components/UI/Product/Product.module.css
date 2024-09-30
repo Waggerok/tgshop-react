@@ -1,0 +1,33 @@
+.card {
+    width: 190px;
+    height: 190px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.card__items {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.card__items_image {
+    width: 90px;
+    img {
+        width: 100%;
+    }
+}
+
+.card__items_title {
+    text-align: center;
+}
+
+.card__items_price {
+    text-align: center;
+    margin-top: 10px;
+    
+}
