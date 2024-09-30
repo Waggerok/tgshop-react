@@ -1,6 +1,6 @@
 .card {
-    width: 175px;
-    height: 175px;
+    width: 150px;
+    height: 150px;
     background-color: white;
     border: 1px solid black;
     border-radius: 25px;
@@ -16,7 +16,7 @@
 }
 
 .card__items_image {
-    width: 80px;
+    width: 70px;
     img {
         width: 100%;
     }
@@ -24,11 +24,12 @@
 
 .card__items_title {
     text-align: center;
-    font-size: 14px;
+    margin-top: 5px;
+    font-size: 10px;
 }
 
 .card__items_price {
     text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 5px;
+    font-size: 10px;
 }
