@@ -12,9 +12,9 @@ const Main = () => {
     }, []);
 
     return (
-        <>
+        <div className="App">
             <Product/>
-        </>
+        </div>
     )
 };
 
