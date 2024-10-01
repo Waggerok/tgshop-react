@@ -1,20 +1,20 @@
 import React from 'react';
 import styles from './Product.module.css'
 
-import iPhone from '../../../img/iPhone16promaxBlack.png';
+// import iPhone from '../../../img/iPhone16promaxBlack.png';
 
-const Product = () => {
+const Product = (props) => {
     return(
         <div className={styles.card}>
             <div className={styles.card__items}>
                 <div className={styles.card__items_image}>
-                    <img src={iPhone} alt='phone'/>
+                    <img src={props.image} alt='phone'/>
                 </div>
                 <div className={styles.card__items_title}>
-                    iPhone 16 Pro max 256Gb Black
+                    {props.title}
                 </div>
                 <div className={styles.card__items_price}>
-                    <b>190000 руб.</b>
+                    <b>{props.price} руб.</b>
                 </div>
             </div>
         </div>
