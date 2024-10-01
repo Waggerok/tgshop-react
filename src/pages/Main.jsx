@@ -5,8 +5,10 @@ import iPad from '../img/iPad.png';
 import mac from '../img/Macbook.png';
 
 //Components
-import Product from '../components/UI/Product/Product';
+// import Product from '../components/UI/Product/Product';
 import Input from '../components/UI/Input/Input';
+import Select from '../components/UI/Select/Select';
+import ProductList from '../components/ProductList';
 
 const tg = window.Telegram.WebApp;
 
@@ -17,6 +19,18 @@ const Main = () => {
     }, []);
 
     const [searchQuerry, setSearchQuerry] = useState('');
+    const [selectedSort, setSelectedSort] = useState('');
+
+    const [products,setProducts] = useState([
+        {id:1, title: 'iPhone 16 Pro Max Black', image: iPhone, price: 190000 },
+        {id:2, title: 'iPad 10.2 WIFI+Cell Grey', image: iPad, price: 35000},
+        {id:3, title: 'Macbook Pro 16 M2 Gray', image: mac, price: 200000},
+    ])
+
+    const sortProduct = (sort) => {
+        setSelectedSort(sort);
+        setProducts([...products].sort((a,b) => a[sort].localeCompare(b[sort])))
+    }
 
     return (
         <div className="App">
@@ -27,15 +41,21 @@ const Main = () => {
             />
 
             <div>
-                <select>
-                    <option value="value1">По названию</option>
-                    <option value="value1">По цене</option>
-                </select>
+                <Select 
+                    value={selectedSort}
+                    onChange={sortProduct}
+                    defaultValue='Сортировка по'
+                    options={[
+                        {value: 'title', name: 'По названию'},
+                        //сделать сортировку по цене
+                    ]}
+                />
             </div>
 
-            <Product image={iPhone} title='iPhone 16 Pro Max Black' price='190000'/>
-            <Product image={iPad} title='iPad 10.2 WIFI+Cell Grey' price='35000'/>
-            <Product image={mac} title='Macbook Pro 16 M2 Gray' price='200000'/>
+            <ProductList
+                products={products}
+            />
+            
         </div>
     )
 };
