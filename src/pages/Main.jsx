@@ -67,7 +67,7 @@ const Main = () => {
             <ProductList products={sortedAndSearchedProducts}/>
             :
             <h2 style={{textAlign: 'center'}}>
-                Товар не найден
+                Товар не найден!
             </h2>
             }
             
