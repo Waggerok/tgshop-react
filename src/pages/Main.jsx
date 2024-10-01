@@ -24,6 +24,7 @@ const Main = () => {
         {id:3, title: 'Macbook Pro 16 M2 Gray', image: mac, price: 200000},
     ]);
 
+
     const [selectedSort, setSelectedSort] = useState('');
     const [searchQuerry, setSearchQuerry] = useState('');
     
@@ -37,6 +38,8 @@ const Main = () => {
     const sortedAndSearchedProducts = useMemo(() => {
         return sortedProducts.filter(product => product.title.toLowerCase().includes(searchQuerry));
     }, [searchQuerry, sortedProducts]);
+
+    console.log(setProducts)
     
     const sortProduct = (sort) => {
         setSelectedSort(sort);
