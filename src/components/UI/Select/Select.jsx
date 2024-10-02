@@ -1,5 +1,4 @@
 import React from 'react';
-// import styles from './Select.module.css';
 
 const Select = ({options, defaultValue, value, onChange}) => {
     return (

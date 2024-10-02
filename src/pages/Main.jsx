@@ -30,7 +30,13 @@ const Main = () => {
     
     const sortedProducts = useMemo(() => {
         if (selectedSort) {
-            return [...products].sort((a,b) => a[selectedSort].localeCompare(b[selectedSort]))
+            return [...products].sort((a,b) => {
+                if (selectedSort === 'price') {
+                    return a[selectedSort] - b[selectedSort];
+                } else {
+                    return a[selectedSort].localeCompare(b[selectedSort]);
+                }
+            })
         }
         return products;
     }, [selectedSort,products])
@@ -60,6 +66,7 @@ const Main = () => {
                     defaultValue='Сортировка по'
                     options={[
                         {value: 'title', name: 'По названию'},
+                        {value: 'price', name: 'По цене'},
                         //сделать сортировку по цене
                     ]}
                 />
