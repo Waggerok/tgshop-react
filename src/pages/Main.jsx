@@ -42,7 +42,7 @@ const Main = () => {
     }, [selectedSort,products])
 
     const sortedAndSearchedProducts = useMemo(() => {
-        return sortedProducts.filter(product => product.title.toLowerCase().includes(searchQuerry));
+        return sortedProducts.filter(product => product.title.toLowerCase().includes(searchQuerry.toLowerCase()));
     }, [searchQuerry, sortedProducts]);
 
     console.log(setProducts)
